@@ -1,9 +1,8 @@
 package rest;
 
 import org.junit.jupiter.api.Test;
-
 import static io.restassured.RestAssured.given;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.hamcrest.Matchers.equalTo;
 
 
 class MobileBankApiTestPost {
@@ -17,7 +16,7 @@ class MobileBankApiTestPost {
                 .post("/post")
                 .then()// Проверки
                 .statusCode(200)
-                .body("data", equalTo("привет"))
+                .body("data", equalTo("эй,привет"))
         ;
     }
 }
